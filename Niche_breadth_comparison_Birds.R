@@ -46,7 +46,7 @@ frame <- spTransform(frame, CRS(proj4string(world)))
 ############## loop through species ################
 i=1
 
-for(i in 2:length(list))
+for(i in 3:length(list))
 {
   #load and visulalise the data
   setwd(wd_sps_occ)
