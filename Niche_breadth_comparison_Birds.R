@@ -2,6 +2,8 @@
 library(nicheRealisation);library(bRacatus);library(rgdal);library(rgeos)
 library(raster);library(data.table)
 
+options(bitmapType='cairo') #otherwise plots are not working...
+
 #directories
 wd_birds <- '/Users/carloseduardoaribeiro/Documents/CNA/Data/Birds'
 wd_sps_occ <- '/Users/carloseduardoaribeiro/Documents/CNA/Data/Birds/Occurrences'
@@ -23,7 +25,7 @@ wd_mapping <- '/Users/carloseduardoaribeiro/Documents/Soup/Map stuff'
 setwd(wd_stand_var)
 layer <- raster('bio1.asc')
 layer_ID <- layer
-layer_ID[c(1:length(layer))] <- c(1:length(layer))
+layer_ID[c(1:length(layer))] <- c(1:length(layer)) #for some weird reason, produces an error the first time I run, but works fine the second...
 
 #load alien bird list
 setwd(wd_birds)
@@ -44,7 +46,7 @@ frame <- spTransform(frame, CRS(proj4string(world)))
 
 
 ############## loop through species ################
-i=1
+i=3
 
 for(i in 3:length(list))
 {
@@ -83,7 +85,8 @@ for(i in 3:length(list))
       #save figure with the species native range and alien ref_regs
       setwd(wd_fig_regs)
       
-      jpeg(file=paste0(list[i],"_reference_regions.jpeg"),width = 1000, height = 1000)
+      jpeg(file=paste0(list[i],"_reference_regions.jpeg"),width = 1000, height = 1000,
+           type = 'cairo')
       
       par(mar = c(2,2,2,2))
       
@@ -104,7 +107,8 @@ for(i in 3:length(list))
       #save figure with the species native and alien points
       setwd(wd_fig_points)
       
-      jpeg(file=paste0(list[i],"_points.jpeg"),width = 1000, height = 1000)
+      jpeg(file=paste0(list[i],"_points.jpeg"),width = 1000, height = 1000,
+           type = 'cairo')
       
       par(mar = c(2,2,2,2))
       
