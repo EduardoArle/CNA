@@ -205,7 +205,7 @@ for(i in 2:length(list))
           title(xlab = 'Occurrences', cex.lab = 3,
                 line = 5)
         }else{
-          lines(c(1:nrow(nat_breath_var2))*rep_tol,nat_breath_var[,j], 
+          lines(c(1:nrow(nat_breath_var2))*rep_tol,nat_breath_var2[,j], 
                 col= "gray80", lwd = 2)
         }
       }

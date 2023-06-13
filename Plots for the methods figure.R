@@ -323,26 +323,28 @@ par(mar=c(6,4,4,4), bg = 'white')
 par(pty="s")
 
 plot(c(0,103), c(0,1.03), type= "n", xlab = "", ylab = "", cex.axis = 2.5, 
-     cex.lab = 1.8, xaxs = "i", yaxs = "i")
+     cex.lab = 1.8, xaxs = "i", yaxs = "i", xaxt = 'n')
+axis(side = 1, at = c(0, 20, 40, 60, 80, 100), 
+     labels = c('1', '2', '3', '...', '...', 'n'), cex.axis = 2.5)
 rect(0,0,103,1.03, col = "#efead7")
 
 mtext("Niche breadth", side=2, line=4, cex = 4)
 
-mtext("Occurrences", side=1, line=4, cex = 4)
+mtext("Folds", side=1, line=4, cex = 4)
 
-lines(seq(0,100,10),c(0,0.4,0.55,0.8,0.87,0.91,0.95,0.963,0.97,0.99,0.997),  
+lines(seq(0,100,20),c(0.4,0.75,0.87,0.97,0.99,0.997),  
       type="l",ylab = NA, xlab = NA,
       ylim = c(0,1), lwd = 8, 
       col = "#4a794a")
 
-points(10, 0.4, pch = 21, cex = 5, bg = "#ccece6")
-points(20, 0.55, pch = 21, cex = 5, bg = "#41ae76")
-points(30, 0.8, pch = 21, cex = 5, bg = "#00441b")
+points(3, 0.415, pch = 21, cex = 5, bg = "#ccece6")
+points(20, 0.75, pch = 21, cex = 5, bg = "#41ae76")
+points(40, 0.87, pch = 21, cex = 5, bg = "#00441b")
 points(100, 0.997, pch = 21, cex = 5, bg = "black")
 
-text(15.5, 0.365, '1', font = 2, cex = 3)
-text(25.5, 0.515, '2', font = 2, cex = 3)
-text(35.5, 0.765, '3', font = 2, cex = 3)
+text(9, 0.415, '1', font = 2, cex = 3)
+text(25.5, 0.7, '2', font = 2, cex = 3)
+text(43.5, 0.805, '3', font = 2, cex = 3)
 text(100, 0.93, 'n', font = 2, cex = 3)  #save width 1000
 
 
@@ -406,9 +408,11 @@ plot(occ3, pch = 21, bg = "#993404", cex = 1.5, add = T) #save fig default
 par(mar=c(6,4,4,4), bg = 'white')
 par(pty="s")
 
-plot(c(0,6.2), c(1,6.2), type= "n", xlab = "", ylab = "", cex.axis = 2.5, 
-     cex.lab = 1.8, xaxs = "i", yaxs = "i")
-rect(0,1,6.2,6.2, col = "#efead7")
+plot(c(0,6.2), c(0,6.2), type= "n", xlab = "", ylab = "", cex.axis = 2.5, 
+     cex.lab = 1.8, xaxs = "i", yaxs = "i", xaxt = 'n')
+axis(side = 1, at = c(0, 1, 2, 3, 4, 5, 6), 
+     labels = c('0', '1', '2', '3', '...', '...', 'n'), cex.axis = 2.5)
+rect(0,0,6.2,6.2, col = "#efead7")
 
 lines(seq(0,6,1),c(1,3.6,4.8,5.6,5.78,5.9,5.95),  
      type="l",ylab = NA, xlab = NA,
@@ -424,10 +428,10 @@ points(2, 4.8, pch = 21, cex = 5, bg = "#fe9929")
 points(3, 5.6, pch = 21, cex = 5, bg = "#993404")
 points(6, 5.95, pch = 21, cex = 5, bg = "black")
 
-text(1.3, 3.4, '1', font = 2, cex = 3)
-text(2.3, 4.6, '2', font = 2, cex = 3)
-text(3.3, 5.35, '3', font = 2, cex = 3)
-text(6, 5.6, 'n', font = 2, cex = 3)  #save width 1000
+text(1.4, 3.3, '1', font = 2, cex = 3)
+text(2.4, 4.5, '2', font = 2, cex = 3)
+text(3.35, 5.25, '3', font = 2, cex = 3)
+text(6, 5.5, 'n', font = 2, cex = 3)  #save width 1000
 
 
 #### PANEL J ####
@@ -460,9 +464,11 @@ plot(bg3, pch = 21, bg = "#3f007d", cex = 1.5, add = T) #save fig default
 par(mar=c(6,4,4,4), bg = 'white')
 par(pty="s")
 
-plot(c(0,6.2), c(1,17.5), type= "n", xlab = "", ylab = "", cex.axis = 2.5, 
-     cex.lab = 1.8, xaxs = "i", yaxs = "i")
-rect(0,1,6.2,17.5, col = "#efead7")
+plot(c(0,6.2), c(0,17.5), type= "n", xlab = "", ylab = "", cex.axis = 2.5, 
+     cex.lab = 1.8, xaxs = "i", yaxs = "i", xaxt = 'n')
+axis(side = 1, at = c(0, 1, 2, 3, 4, 5, 6), 
+     labels = c('0', '1', '2', '3', '...', '...', 'n'), cex.axis = 2.5)
+rect(0,0,6.2,17.5, col = "#efead7")
 
 lines(seq(0,6,1),c(1,6,6,8,10,11,17),  
       type="l",ylab = NA, xlab = NA,
@@ -478,10 +484,10 @@ points(2, 6, pch = 21, cex = 5, bg = "#6a51a3")
 points(3, 8, pch = 21, cex = 5, bg = "#3f007d")
 points(6, 17, pch = 21, cex = 5, bg = "black")
 
-text(1, 7.2, '1', font = 2, cex = 3)
-text(2, 7.2, '2', font = 2, cex = 3)
-text(3, 9.2, '3', font = 2, cex = 3)
-text(5.6, 17, 'n', font = 2, cex = 3) 
+text(1, 7.4, '1', font = 2, cex = 3)
+text(2, 7.4, '2', font = 2, cex = 3)
+text(3, 9.4, '3', font = 2, cex = 3)
+text(5.57, 16.8, 'n', font = 2, cex = 3) 
 
 #add ANAC
 lines(seq(0,6,1),c(1,3.6,4.8,5.6,5.78,5.9,5.95),  
@@ -494,21 +500,21 @@ points(2, 4.8, pch = 21, cex = 5, bg = "#fe9929")
 points(3, 5.6, pch = 21, cex = 5, bg = "#993404")
 points(6, 5.95, pch = 21, cex = 5, bg = "black")
 
-text(1, 2.4, '1', font = 2, cex = 3)
-text(2, 3.6, '2', font = 2, cex = 3)
-text(3, 4.4, '3', font = 2, cex = 3)
-text(6, 4.75, 'n', font = 2, cex = 3)  #save width 1000
+text(1, 2.2, '1', font = 2, cex = 3)
+text(2, 3.4, '2', font = 2, cex = 3)
+text(3, 4.2, '3', font = 2, cex = 3)
+text(6, 4.6, 'n', font = 2, cex = 3)  #save width 1000
 
 #add legend lines
-lines(c(0.8,1.5),c(15,15),  
+lines(c(0.3,1),c(15,15),  
       type="l", lwd = 8,
       col = "#807dba")
 
-lines(c(0.8,1.5),c(13.5,13.5),  
+lines(c(0.3,1),c(13.5,13.5),  
       type="l", lwd = 8,
       col = "#e18c00")
 
-text(2.4, 15, 'BGAC', font = 2, cex = 2)
-text(2.4, 13.5, 'ANAC', font = 2, cex = 2)
+text(2, 15, 'BG curve', font = 2, cex = 2)
+text(2.15, 13.5, 'Alien curve', font = 2, cex = 2)
 
 

@@ -16,7 +16,8 @@ jpeg(file = "Nat_asymp.jpeg", width = 1000, height = 1000)
 par(mar = c(12,12,12,12))
 
 plot(c(0,100), c(0,1), type= "n", xlab = "", ylab = "",
-     yaxt = "n", xaxt = 'n')
+     yaxt = "n", xaxt = 'n', xaxs = "i", yaxs = "i")
+rect(0,0,100,17.5, col = "#efead7")
 
 #plot line
 lines(seq(0,100,10),asym,  
@@ -34,7 +35,7 @@ dev.off()
 #make vector of no asymptote in the native range
 n_asym <- seq(0.3,1,0.07)
 
-#plot native range with asymptote
+#plot native range without asymptote
 setwd(wd_fig)
 
 jpeg(file = "Nat_non_asymp.jpeg", width = 1000, height = 1000)
@@ -42,7 +43,8 @@ jpeg(file = "Nat_non_asymp.jpeg", width = 1000, height = 1000)
 par(mar = c(12,12,12,12))
 
 plot(c(0,100), c(0,1), type= "n", xlab = "", ylab = "",
-     yaxt = "n", xaxt = 'n')
+     yaxt = "n", xaxt = 'n', xaxs = "i", yaxs = "i")
+rect(0,0,100,17.5, col = "#efead7")
 
 #plot line
 lines(seq(0,100,10),n_asym,  
@@ -73,7 +75,8 @@ jpeg(file = "Alien_asymp.jpeg", width = 1000, height = 1000)
 par(mar = c(12,12,12,12))
 
 plot(c(0,100), c(1,20), type= "n", xlab = "", ylab = "",
-     yaxt = "n", xaxt = 'n')
+     yaxt = "n", xaxt = 'n', xaxs = "i", yaxs = "i")
+rect(0,0,100,20, col = "#efead7")
 
 #plot line
 lines(seq(0,100,10),bg,  
@@ -108,7 +111,8 @@ jpeg(file = "Alien_non_asymp.jpeg", width = 1000, height = 1000)
 par(mar = c(12,12,12,12))
 
 plot(c(0,100), c(1,20), type= "n", xlab = "", ylab = "",
-     yaxt = "n", xaxt = 'n')
+     yaxt = "n", xaxt = 'n', xaxs = "i", yaxs = "i")
+rect(0,0,100,20, col = "#efead7")
 
 #plot line
 lines(seq(0,100,10),bg,  
